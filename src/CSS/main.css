@@ -1,27 +1,4 @@
 
-.rankedImageBook{
-    width: 132px;
-    height: 232px;
-    transition: all 300ms;
-}
-
-.rankedImageBook:hover{
-    scale: 1.04;
-}
-
-
-.rankedBookContainer{
-    width: 160px;
-    height: 400px;
-    display: flex;
-    align-items: center;
-    flex-flow: column;
-    background-color: whitesmoke;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-}
-
-
 .cardStarIcon{
     width: 1.5rem;
     height: 1.5rem;
@@ -36,9 +13,7 @@
 .bookName{
     font-weight: 600;
     font-size: 1.5rem;
-
 }
-
 
 .autorName{
     font-weight: 40;
@@ -288,14 +263,6 @@
 
 .autorContainer{
     border-radius: 1.2rem;
-}
-
-.bookSlide{
-    width: 120%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .sliderButton,.sliderButton2{
