@@ -30,3 +30,69 @@
     justify-content: center;
     margin: 0 10% 0 7%;
 }
+
+.priceContainer{
+    display: flex;
+    width: 90%;
+    height: fit-content;
+    background-color: red;
+    border-radius: 1rem;
+}
+
+
+.priceTitleSection{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+}
+
+
+.priceTitle{
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+
+.priceWithTax{
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+
+.priceIconSection{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    height: 100%;
+}
+
+
+.buyIconContainer{
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    background-color: wheat;
+    transition: all 250ms;
+}
+
+.buyIconContainer:hover{
+    scale: 1.1;
+}
+
+
+.cardStarIcon{
+    width: 1.5rem;
+    height: 1.5rem;
+    transition: all 200ms;
+}
+
+.cardStarIcon:hover{
+    scale: 1.3;
+}

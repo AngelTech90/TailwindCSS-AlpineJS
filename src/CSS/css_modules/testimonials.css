@@ -1,0 +1,35 @@
+.testimonialImage2{
+    z-index: 2;
+    position: absolute;
+    margin-left: 2%;
+}
+
+.testimonialImage3{
+    z-index: 3;
+    position: absolute;
+    margin-left: 4%;
+}
+
+.testimonialImage4{
+    z-index: 4;
+    position: absolute;
+    margin-left: 6%;
+}
+
+.testimonialImage5{
+    z-index: 5;
+    position: absolute;
+    margin-left: 8%;
+}
+
+.testimonialImage6{
+    z-index: 6;
+    position: absolute;
+    margin-left: 10%;
+}
+
+.writterImage{
+    z-index: 2;
+    position: absolute;
+
+}

@@ -2,3 +2,85 @@
     width: 100%;
     height: 100%;
 }
+
+
+.selledBookTitle{
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+
+.selledBookAutor{
+    font-weight: 1.2rem;
+    font-weight: 400;
+}
+
+
+.selledBookPrice{
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+.selledBookImage{
+    width: 180px;
+    height: 220px;
+    transition: all 350ms;
+    margin-left: 8%;
+}
+
+
+.selledBookImage:hover{
+    scale:1.03;
+}
+
+
+.selledBookContainer{
+    width: 390px;
+    height: 300px;
+    padding-left: 1%;
+    display: flex;
+    background-color: aliceblue;
+}
+
+
+.sellSection1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+}
+
+
+.sellSection2{
+    width: 50%;
+    height: 100%;
+    padding: 0.5rem;
+    display: flex;
+    align-items: start;
+    flex-direction: column; 
+}
+
+
+.sellLinksContainer{
+    width: 95%;
+    height: 3rem;
+    gap: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.categorieLink{
+    width: 48%;
+    height: 2rem;
+    border-radius: 0.4rem;
+    font-size: 0.6rem;
+    font-weight: 600;
+    background-color: #0017e7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color:white;
+}

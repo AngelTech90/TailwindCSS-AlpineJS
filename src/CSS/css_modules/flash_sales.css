@@ -10,3 +10,20 @@
     height: 100%;
     gap: 3%;
 }
+
+.timeSaleSpan{
+    border: 4px solid black;
+    width: 18%;
+    height: 80%;
+    font-size: 2rem;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.spanTimeMetric{
+    font-weight: 400;
+    font-size: 0.7rem;
+}
