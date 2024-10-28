@@ -246,21 +246,6 @@
 
 }
 
-.footerTitle{
-    font-size: 1.1rem;
-    font-weight: 500;
-}
-
-.footerIcon{
-    width: 85%;
-    height: 85%;
-    transition: all 400ms;
-}
-
-.footerIcon:hover{
-    scale:1.1;
-}
-
 .autorContainer{
     border-radius: 1.2rem;
 }
@@ -276,8 +261,5 @@
 }
 
 
-.bestSelledBookSlide{
-    width: 100%;
-    height: 100%;
-}
+
 

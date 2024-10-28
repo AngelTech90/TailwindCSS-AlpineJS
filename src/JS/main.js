@@ -47,15 +47,9 @@ menuButton.onclick = () => {
 
 //Sliders elements:
 
-const rankedSlider = document.querySelector('#rankedBookSlider');
-const rankedSlider2 = document.querySelector('#bestSelledSlider')
-
-const max = rankedSlider.scrollWidth - rankedSlider.clientWidth;
-const left = rankedSlider.clientWidth;
-
-const max2 = rankedSlider.scrollWidth - rankedSlider.clientWidth;
-const left2 = rankedSlider.clientWidth;
-
+const rankedSlider = document.getElementById('rankedBookSlider');
+const rankedSlider2 = document.getElementById('bestSelledSlider')
+const rankedSlider3 = document.getElementById('flashSaleSlider');
 
 // rakedBooks slides buttons:
 const btnLeft1 = document.getElementById('leftButton');
@@ -77,6 +71,17 @@ const btnRight5 = document.getElementById('rightButton5');
 
 const btnLeft6 = document.getElementById('leftButton6');
 const btnRight6 = document.getElementById('rightButton6');
+
+
+//sale books slides buttons:
+const btnLeft7 = document.getElementById('leftButton7');
+const btnRight7 = document.getElementById('rightButton7');
+
+const btnLeft8 = document.getElementById('leftButton8');
+const btnRight8 = document.getElementById('rightButton8');
+
+const btnLeft9 = document.getElementById('leftButton9');
+const btnRight9 = document.getElementById('rightButton9');
 
 
 
@@ -111,5 +116,61 @@ createButtonForSlider(btnRight4, btnLeft4, rankedSlider2);
 createButtonForSlider(btnRight5, btnLeft5, rankedSlider2);
 createButtonForSlider(btnRight6, btnLeft6, rankedSlider2);
 
+//Slider 3:
+createButtonForSlider(btnRight7, btnLeft7, rankedSlider3);
+createButtonForSlider(btnRight8, btnLeft8, rankedSlider3);
+createButtonForSlider(btnRight9, btnLeft9, rankedSlider3);
+
 //Here we create the button pairs of selled slider
 
+
+
+//*Code for the clock:
+const countdownDuration = 1064752;
+
+    let timeLeft = countdownDuration;
+
+    let intervalId;
+
+    let days = 12;
+
+    let hours = 7;
+
+    let minutes = 44;
+
+    let seconds = 12;
+
+    function updateClock() {
+
+        document.getElementById("flashSaleDays").innerHTML = `${days.toString()}`;
+        document.getElementById('flashSalesHours').innerHTML = `${hours.toString()}`;
+        document.getElementById('flashSaleMinutes').innerHTML = `${minutes.toString()}`;
+        document.getElementById('flashSaleSeconds').innerHTML = `${seconds.toString()}`;
+
+        timeLeft -= 1;
+
+        seconds -= 1;
+
+        if(seconds == 0){
+            seconds = 59;
+            minutes -= 1;
+        }
+
+        if (minutes == 0){
+            minutes = 59;
+            hours -= 1;
+        }
+
+        if (hours == 0){
+            hours = 23;
+            days -= 1;
+        }
+        
+        
+        if (timeLeft <= 0) {
+            clearInterval(intervalId);
+            // Handle countdown completion (e.g., display a message or trigger an event)
+        }
+    }
+
+intervalId = setInterval(updateClock, 1000); // update every 1 second

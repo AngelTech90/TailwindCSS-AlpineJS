@@ -1,0 +1,14 @@
+.footerTitle{
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.footerIcon{
+    width: 65%;
+    height: 65%;
+    transition: all 400ms;
+}
+
+.footerIcon:hover{
+    scale:1.1;
+}
