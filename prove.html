@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slider Example</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .saleSlide {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            gap: 3%;
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center h-screen bg-gray-100">
+
+<div id="flashSaleSlider" class="overflow-hidden w-full h-full max-w-screen-lg mx-auto relative">
+    <div class="saleSlide space-y-4">
+
+        <button class="sliderButton absolute left-0 top-1/2 transform -translate-y-1/2" id="leftButton7">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-gray-700 hover:text-gray-900">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
+            </svg>
+        </button>
+
+        <!-- Sample Slide -->
+        <div class="w-1/2 h-[230px] bg-rose-600 flex rounded-xl flashCard">
+            <section class="w-[40%] h-[95%] flex items-center justify-center">
+                <a href="#">
+                    <img src="https://via.placeholder.com/150x210" alt="" class="w-[150px] h-[210px] hover:scale-[1.03] transition-all duration-300">
+                </a>
+            </section>
+            <section class="w-[60%] h-full flex flex-col justify-between p-4 text-white">
+                <div>
+                    <a href="#" class="hover:text-white transition-all text-[0.9rem] font-semibold">Category</a>
+                    <div class="flex items-center mt-1 space-x-1">
+                        <!-- Rating stars as SVG icons -->
+                        <svg viewBox="0 -0.5 32 32" fill="#FFCB45" class="w-4 h-4"><path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z"/></svg>
+                        <span class="text-sm">(709)</span>
+                    </div>
+                </div>
+                <h2 class="text-lg font-semibold">Book name</h2>
+                <p class="text-sm font-light">Author name</p>
+                <div>
+                    <h2 class="text-xl font-semibold">$20.00</h2>
+                    <span class="text-sm font-light">$20.00</span>
+                </div>
+                <div class="flex items-center">
+                    <div class="w-full h-[0.3rem] bg-blue-700"></div>
+                    <span class="ml-2 text-xs font-light">2 books left</span>
+                </div>
+            </section>
+        </div>
+        <!-- End of Sample Slide -->
+
+        <button class="sliderButton absolute right-0 top-1/2 transform -translate-y-1/2" id="rightButton7">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-gray-700 hover:text-gray-900">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+            </svg>
+        </button>
+    </div>
+</div>
+
+<script>
+    // JavaScript to handle slide navigation
+    const flashSaleSlider = document.getElementById('flashSaleSlider');
+    const btnLeft7 = document.getElementById('leftButton7');
+    const btnRight7 = document.getElementById('rightButton7');
+
+    function moveSlideRight(slider) {
+        slider.scrollBy({ left: slider.clientWidth, behavior: 'smooth' });
+    }
+
+    function moveSlideLeft(slider) {
+        slider.scrollBy({ left: -slider.clientWidth, behavior: 'smooth' });
+    }
+
+    btnRight7.onclick = () => moveSlideRight(flashSaleSlider);
+    btnLeft7.onclick = () => moveSlideLeft(flashSaleSlider);
+</script>
+
+</body>
+</html>
