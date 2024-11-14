@@ -1,132 +1,146 @@
 
 const $ = selector => document.getElementById(selector);
 
-//*Button code for show the menu when we click it:
-//*Button for change the display of one of our menu's section:
-let menuButton = $('menuAccessButton');
-let sectionMenu2 = $('secondSection');
+//* Code for navbar:
+function loadNavBarComponent(){
 
-let clicksCounter = 1;
+    //*Button code for show the menu when we click it:
+    //*Button for change the display of one of our menu's section:
+    let menuButton = $('menuAccessButton');
+    let sectionMenu2 = $('secondSection');
 
-//*Here we hide our second menu section:
-sectionMenu2.style.display = 'none';
+    let clicksCounter = 1;
+
+    //*Here we hide our second menu section:
+    sectionMenu2.style.display = 'none';
 
 
-//*Here we'll render our menu once we click our button:
-menuButton.onclick = () => {
+    //*Here we'll render our menu once we click our button:
+    menuButton.onclick = () => {
 
-    //*We count the amount of our clicks for render our hide our section:
-    if(clicksCounter === 1){
+        //*We count the amount of our clicks for render our hide our section:
+        if(clicksCounter === 1){
 
-        sectionMenu2.style.display = 'flex';
+            sectionMenu2.style.display = 'flex';
+            
+        }
         
-    }
-    
-    if(clicksCounter === 2){
-    
-         //*Here we hide our second menu section:
-        sectionMenu2.style.display = 'none';
+        if(clicksCounter === 2){
+        
+            //*Here we hide our second menu section:
+            sectionMenu2.style.display = 'none';
 
-    }
+        }
 
-    //*When we click our button we increase the total amount of clicks
-    clicksCounter = clicksCounter + 1;
+        //*When we click our button we increase the total amount of clicks
+        clicksCounter = clicksCounter + 1;
 
-    //*Once our clicks reach the the limit we reset our clicks
-    if(clicksCounter > 2){
+        //*Once our clicks reach the the limit we reset our clicks
+        if(clicksCounter > 2){
 
-        clicksCounter = clicksCounter - 2;
+            clicksCounter = clicksCounter - 2;
+
+        }
 
     }
 
 }
-
-
-
-// Main slider template function:
-
-//Sliders elements:
-
-const rankedSlider = document.getElementById('rankedBookSlider');
-const rankedSlider2 = document.getElementById('bestSelledSlider')
-const rankedSlider3 = document.getElementById('flashSaleSlider');
-
-// rakedBooks slides buttons:
-const btnLeft1 = document.getElementById('leftButton');
-const btnRight1 = document.getElementById('rightButton');
-
-const btnLeft2 = document.getElementById('leftButton2');
-const btnRight2 = document.getElementById('rightButton2');
-
-const btnLeft3 = document.getElementById('leftButton3');
-const btnRight3 = document.getElementById('rightButton3');
-
-
-//ranked books slides buttons:
-const btnLeft4 = document.getElementById('leftButton4');
-const btnRight4 = document.getElementById('rightButton4');
-
-const btnLeft5 = document.getElementById('leftButton5');
-const btnRight5 = document.getElementById('rightButton5');
-
-const btnLeft6 = document.getElementById('leftButton6');
-const btnRight6 = document.getElementById('rightButton6');
-
-
-//sale books slides buttons:
-const btnLeft7 = document.getElementById('leftButton7');
-const btnRight7 = document.getElementById('rightButton7');
-
-const btnLeft8 = document.getElementById('leftButton8');
-const btnRight8 = document.getElementById('rightButton8');
-
-const btnLeft9 = document.getElementById('leftButton9');
-const btnRight9 = document.getElementById('rightButton9');
-
-
-
-    function moveSlideRight(slider) {
-        slider.scrollBy({left: slider.clientWidth, behavior: 'smooth'});
-    }
-        
-    function moveSlideLeft(slider) {
-        slider.scrollBy({left: (slider.clientWidth * -1), behavior: 'smooth'});
-    }
-
-    // Function for create the slider buttons: 
-    function createButtonForSlider(newButtonRight, newButtonLeft, slider){
-        newButtonRight.onclick = () => {
-            moveSlideRight(slider);
-        };
     
-        newButtonLeft.onclick = () => {
-            moveSlideLeft(slider);
-        }
+//Code for slide right:
+function moveSlideRight(slider) {
+    slider.scrollBy({left: slider.clientWidth, behavior: 'smooth'});
+}
+    
+//Code for slide left:
+function moveSlideLeft(slider) {
+    slider.scrollBy({left: (slider.clientWidth * -1), behavior: 'smooth'});
+}
+
+// Function for create the slider buttons: 
+function createButtonForSlider(newButtonRight, newButtonLeft, slider){
+    newButtonRight.onclick = () => {
+        moveSlideRight(slider);
+    };
+
+    newButtonLeft.onclick = () => {
+        moveSlideLeft(slider);
     }
+}
 
-// Here we create the button pairs ofr ranked slider:
+// Function for slider 1:
+function loadRankedBooksSlider(){
 
-//Slider 1:
-createButtonForSlider(btnRight1, btnLeft1, rankedSlider);
-createButtonForSlider(btnRight2, btnLeft2, rankedSlider);
-createButtonForSlider(btnRight3, btnLeft3, rankedSlider);
+    //Slider element:
+    const rankedSlider = $('rankedBookSlider');
 
-//Slider 2:
-createButtonForSlider(btnRight4, btnLeft4, rankedSlider2);
-createButtonForSlider(btnRight5, btnLeft5, rankedSlider2);
-createButtonForSlider(btnRight6, btnLeft6, rankedSlider2);
+    // rakedBooks slides buttons:
+    const btnLeft1 = $('leftButton');
+    const btnRight1 = $('rightButton');
 
-//Slider 3:
-createButtonForSlider(btnRight7, btnLeft7, rankedSlider3);
-createButtonForSlider(btnRight8, btnLeft8, rankedSlider3);
-createButtonForSlider(btnRight9, btnLeft9, rankedSlider3);
+    const btnLeft2 = $('leftButton2');
+    const btnRight2 = $('rightButton2');
 
-//Here we create the button pairs of selled slider
+    const btnLeft3 = $('leftButton3');
+    const btnRight3 = $('rightButton3');
+
+    //Slider 1:
+    createButtonForSlider(btnRight1, btnLeft1, rankedSlider);
+    createButtonForSlider(btnRight2, btnLeft2, rankedSlider);
+    createButtonForSlider(btnRight3, btnLeft3, rankedSlider);
+
+}
+
+// Function for slider 2:
+function loadBestSelledSlider(){
+
+    //Slider element:
+    const rankedSlider2 = $('bestSelledSlider');
+
+    //ranked books slides buttons:
+    const btnLeft4 = $('leftButton4');
+    const btnRight4 = $('rightButton4');
+
+    const btnLeft5 = $('leftButton5');
+    const btnRight5 = $('rightButton5');
+
+    const btnLeft6 = $('leftButton6');
+    const btnRight6 = $('rightButton6');
+
+    //Slider 2:
+    createButtonForSlider(btnRight4, btnLeft4, rankedSlider2);
+    createButtonForSlider(btnRight5, btnLeft5, rankedSlider2);
+    createButtonForSlider(btnRight6, btnLeft6, rankedSlider2);
 
 
+}
+
+// Function for slider 3:
+function loadFlashSalesSlider(){
+
+    //Slider element:
+    const rankedSlider3 = $('flashSaleSlider');
+
+    //sale books slides buttons:
+    const btnLeft7 = $('leftButton7');
+    const btnRight7 = $('rightButton7');
+
+    const btnLeft8 = $('leftButton8');
+    const btnRight8 = $('rightButton8');
+
+    const btnLeft9 = $('leftButton9');
+    const btnRight9 = $('rightButton9');
+
+    //Slider 3:
+    createButtonForSlider(btnRight7, btnLeft7, rankedSlider3);
+    createButtonForSlider(btnRight8, btnLeft8, rankedSlider3);
+    createButtonForSlider(btnRight9, btnLeft9, rankedSlider3);
+
+}
 
 //*Code for the clock:
-const countdownDuration = 1064752;
+function loadTimerComponent(){
+
+    const countdownDuration = 1064752;
 
     let timeLeft = countdownDuration;
 
@@ -142,10 +156,10 @@ const countdownDuration = 1064752;
 
     function updateClock() {
 
-        document.getElementById("flashSaleDays").innerHTML = `${days.toString()}`;
-        document.getElementById('flashSalesHours').innerHTML = `${hours.toString()}`;
-        document.getElementById('flashSaleMinutes').innerHTML = `${minutes.toString()}`;
-        document.getElementById('flashSaleSeconds').innerHTML = `${seconds.toString()}`;
+        $("flashSaleDays").innerHTML = `${days.toString()}`;
+        $('flashSalesHours').innerHTML = `${hours.toString()}`;
+        $('flashSaleMinutes').innerHTML = `${minutes.toString()}`;
+        $('flashSaleSeconds').innerHTML = `${seconds.toString()}`;
 
         timeLeft -= 1;
 
@@ -174,3 +188,16 @@ const countdownDuration = 1064752;
     }
 
 intervalId = setInterval(updateClock, 1000); // update every 1 second
+}
+
+//*Load all pieces of our page
+function loadPageComponent(){
+    loadNavBarComponent();
+    loadTimerComponent();
+    loadRankedBooksSlider();
+    loadBestSelledSlider();
+    loadFlashSalesSlider();
+}
+
+// we load everthing:
+loadPageComponent();

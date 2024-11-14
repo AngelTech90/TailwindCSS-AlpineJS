@@ -16,9 +16,12 @@
     display: flex;
     align-items: center;
     flex-flow: column;
-    background-color: whitesmoke;
+    background-color: rgb(49, 85, 245);
     padding-top: 1rem;
     padding-bottom: 1rem;
+    box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+    border-radius: 0.75rem; /* 12px */
+    color: aliceblue;
 }
 
 
@@ -28,14 +31,14 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 10% 0 7%;
+    margin: 0 4% 0 4%;
 }
 
 .priceContainer{
     display: flex;
     width: 90%;
     height: fit-content;
-    background-color: red;
+    background-color: rgb(4, 42, 145);
     border-radius: 1rem;
 }
 
