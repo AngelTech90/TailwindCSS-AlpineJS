@@ -46,17 +46,17 @@ function loadNavBarComponent(){
 
 }
     
-//Code for slide right:
+//* Code for slide right:
 function moveSlideRight(slider) {
     slider.scrollBy({left: slider.clientWidth, behavior: 'smooth'});
 }
     
-//Code for slide left:
+//* Code for slide left:
 function moveSlideLeft(slider) {
     slider.scrollBy({left: (slider.clientWidth * -1), behavior: 'smooth'});
 }
 
-// Function for create the slider buttons: 
+//* Function for create the slider buttons: 
 function createButtonForSlider(newButtonRight, newButtonLeft, slider){
     newButtonRight.onclick = () => {
         moveSlideRight(slider);
@@ -67,7 +67,7 @@ function createButtonForSlider(newButtonRight, newButtonLeft, slider){
     }
 }
 
-// Function for slider 1:
+//* Function for slider 1:
 function loadRankedBooksSlider(){
 
     //Slider element:
@@ -90,7 +90,7 @@ function loadRankedBooksSlider(){
 
 }
 
-// Function for slider 2:
+//* Function for slider 2:
 function loadBestSelledSlider(){
 
     //Slider element:
@@ -114,7 +114,7 @@ function loadBestSelledSlider(){
 
 }
 
-// Function for slider 3:
+//* Function for slider 3:
 function loadFlashSalesSlider(){
 
     //Slider element:
@@ -137,7 +137,38 @@ function loadFlashSalesSlider(){
 
 }
 
-//*Code for the clock:
+//* Code for slider 4:
+function loadFeaturedBookSlider(){
+
+    //slider element:
+    const rankedSlider4 = $('featuredBookSlider');
+
+    // best selled slider buttons:
+    const btnLeft10 = $("leftButton10");
+    const btnRight10 = $("rightButton10");
+
+    const btnLeft11 = $("leftButton11");
+    const btnRight11 = $("rightButton11");
+
+    const btnLeft12 = $("leftButton12");
+    const btnRight12 = $("rightButton12");
+
+    const btnLeft13 = $("leftButton13");
+    const btnRight13 = $("rightButton13");
+
+    const btnLeft14 = $("leftButton14");
+    const btnRight14 = $("rightButton14");
+
+    //Slider 4:
+    createButtonForSlider(btnRight10, btnLeft10, rankedSlider4);
+    createButtonForSlider(btnRight11, btnLeft11, rankedSlider4);
+    createButtonForSlider(btnRight12, btnLeft12, rankedSlider4);
+    createButtonForSlider(btnRight13, btnLeft13, rankedSlider4);
+    createButtonForSlider(btnRight14, btnLeft14, rankedSlider4);
+
+}
+
+//* Code for the clock:
 function loadTimerComponent(){
 
     const countdownDuration = 1064752;
@@ -190,6 +221,7 @@ function loadTimerComponent(){
 intervalId = setInterval(updateClock, 1000); // update every 1 second
 }
 
+
 //*Load all pieces of our page
 function loadPageComponent(){
     loadNavBarComponent();
@@ -197,6 +229,7 @@ function loadPageComponent(){
     loadRankedBooksSlider();
     loadBestSelledSlider();
     loadFlashSalesSlider();
+    loadFeaturedBookSlider();
 }
 
 // we load everthing:
