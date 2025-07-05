@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login / Register</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #f1f3f4;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+      max-width: 900px;
+      margin: 4rem auto;
+      border-radius: 10px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      background-color: white;
+    }
+
+    .left-panel, .right-panel {
+      flex: 1 1 300px;
+      padding: 3rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .left-panel {
+      background: linear-gradient(to bottom right, #21b5a4, #1ba294);
+      color: white;
+      text-align: center;
+    }
+
+    .left-panel h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .left-panel p {
+      font-size: 0.95rem;
+      margin-bottom: 2rem;
+    }
+
+    .left-panel button {
+      padding: 0.75rem 2rem;
+      border: 2px solid white;
+      border-radius: 25px;
+      background: transparent;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .left-panel button:hover {
+      background: white;
+      color: #1ba294;
+    }
+
+    .right-panel h2 {
+      text-align: center;
+      color: #1ba294;
+      margin-bottom: 1.5rem;
+    }
+
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .social-icons button {
+      border: none;
+      background: white;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .divider {
+      text-align: center;
+      font-size: 0.9rem;
+      margin: 1.5rem 0;
+      color: #999;
+    }
+
+    .form-group {
+      display: flex;
+      align-items: center;
+      border: 1px solid #eee;
+      padding: 0.75rem;
+      margin-bottom: 1rem;
+      background: #f8fafa;
+      border-radius: 5px;
+    }
+
+    .form-group input {
+      flex: 1;
+      border: none;
+      outline: none;
+      background: transparent;
+      font-size: 1rem;
+      padding-left: 0.5rem;
+    }
+
+    .right-panel button.signup {
+      background-color: #1ba294;
+      color: white;
+      border: none;
+      padding: 0.75rem;
+      width: 100%;
+      font-weight: bold;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .right-panel button.signup:hover {
+      background-color: #188a83;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        margin: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- Left Panel / Login -->
+    <div class="left-panel">
+      <img src="https://via.placeholder.com/60" alt="Logo" style="margin-bottom: 2rem;" />
+      <h2>Welcome Back!</h2>
+      <p>To keep connected with us please login with your personal info</p>
+      <button>SIGN IN</button>
+    </div>
+
+    <!-- Right Panel / Sign Up -->
+    <div class="right-panel">
+      <h2>Create Account</h2>
+      <div class="social-icons">
+        <button>f</button>
+        <button>G+</button>
+        <button>in</button>
+      </div>
+      <div class="divider">or use your email for registration:</div>
+
+      <div class="form-group">
+        <span>👤</span>
+        <input type="text" id="nameInput" placeholder="Name" />
+      </div>
+      <div class="form-group">
+        <span>📧</span>
+        <input type="email" id="emailInput" placeholder="Email" />
+      </div>
+      <div class="form-group">
+        <span>🔒</span>
+        <input type="password" id="passwordInput" placeholder="Password" />
+      </div>
+
+      <button class="signup" onclick="saveUserData()">SIGN UP</button>
+    </div>
+  </div>
+
+  <script>
+    function saveUserData() {
+      const name = document.getElementById("nameInput").value.trim();
+      const email = document.getElementById("emailInput").value.trim();
+      const password = document.getElementById("passwordInput").value.trim();
+
+      if (!name || !email || !password) {
+        alert("Please fill in all fields.");
+        return;
+      }
+
+      const userData = {
+        name,
+        email,
+        password
+      };
+
+      localStorage.setItem("userInfo", JSON.stringify(userData));
+      alert("User data saved in localStorage!");
+    }
+  </script>
+
+</body>
+</html>
+
