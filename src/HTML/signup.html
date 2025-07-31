@@ -3,28 +3,32 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Login</title>
+  <title>Sign Up</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../CSS/login.css" />
+  <link rel="stylesheet" href="../CSS/signup.css" />
 </head>
 <body>
   <div class="container">
-    <!-- Left Panel / Sign Up -->
+    <!-- Left Panel / Login -->
     <div class="left-panel">
       <img src="https://via.placeholder.com/60" alt="Logo" style="margin-bottom: 2rem;" />
-      <h2>Hello, Friend!</h2>
-      <p>Enter your personal details and start your journey with us</p>
-      <button onclick="window.location.href='signup.html'">SIGN UP</button>
+      <h2>Welcome Back!</h2>
+      <p>To keep connected with us please login with your personal info</p>
+      <button onclick="window.location.href='login.html'">SIGN IN</button>
     </div>
-    <!-- Right Panel / Login -->
+    <!-- Right Panel / Sign Up -->
     <div class="right-panel">
-      <h2>Sign in to Account</h2>
+      <h2>Create Account</h2>
       <div class="social-icons">
         <button>f</button>
         <button>G+</button>
         <button>in</button>
       </div>
-      <div class="divider">or use your email account:</div>
+      <div class="divider">or use your email for registration:</div>
+      <div class="form-group">
+        <span>👤</span>
+        <input type="text" id="nameInput" placeholder="Name" />
+      </div>
       <div class="form-group">
         <span>📧</span>
         <input type="email" id="emailInput" placeholder="Email" />
@@ -33,22 +37,9 @@
         <span>🔒</span>
         <input type="password" id="passwordInput" placeholder="Password" />
       </div>
-      <a href="#" class="forgot-password">Forgot your password?</a>
-      <button class="signin" onclick="validateLogin()">SIGN IN</button>
+      <button class="signup" onclick="saveUserData()">SIGN UP</button>
     </div>
   </div>
-
-  <!-- Popup Modal -->
-  <div id="popup-overlay" class="popup-overlay">
-    <div class="popup">
-      <div class="popup-content">
-        <h3>Login Failed</h3>
-        <p>You are not a registered user</p>
-        <button onclick="closePopup()">OK</button>
-      </div>
-    </div>
-  </div>
-
-  <script src="../JS/login.js"></script>
+  <script src="../JS/signup.js"></script>
 </body>
 </html>
